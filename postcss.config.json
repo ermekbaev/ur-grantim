@@ -1,0 +1,7 @@
+{
+  "plugins": [
+    "postcss-preset-env",
+    "css-has-pseudo",
+    ["css-blank-pseudo", { "replaceWith": ".blank" }]
+  ]
+}

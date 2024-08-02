@@ -1,0 +1,54 @@
+{
+  "exclude": ["node_modules"],
+
+  "include": [
+    "next-env.d.ts",
+    ".next/types/**/*.ts",
+    "src/**/*.ts",
+    "src/**/*.tsx"
+  ],
+
+  "compilerOptions": {
+    // Type checking
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitOverride": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noUncheckedIndexedAccess": true,
+    "strict": true,
+
+    // Modules
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "paths": { "~/*": ["./src/*"] },
+    "resolveJsonModule": true,
+
+    // Emit
+    "noEmit": true,
+
+    // JavaScript Support
+    "allowJs": true,
+
+    // Editor support
+    "plugins": [{ "name": "next" }],
+
+    // Interop constraints
+    "esModuleInterop": true,
+    "isolatedModules": true,
+    "verbatimModuleSyntax": true,
+
+    // Language and environment
+    "jsx": "preserve",
+    "lib": ["DOM", "DOM.Iterable", "ES2022"],
+    "target": "ES2022",
+
+    // Projects
+    "incremental": true,
+
+    // Output Formatting
+    "preserveWatchOutput": true,
+    "pretty": true,
+
+    // Completeness
+    "skipLibCheck": true
+  }
+}
