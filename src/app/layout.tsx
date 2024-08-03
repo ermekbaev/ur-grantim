@@ -10,7 +10,7 @@ import type { Metadata } from 'next';
 import 'modern-normalize/modern-normalize.css';
 import './global.css';
 
-const title = 'Бухгалтерия Ащота';
+const title = 'Бухгалтерское обслуживание стартапов';
 
 export const metadata: Metadata = {
   title,

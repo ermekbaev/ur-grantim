@@ -33,6 +33,9 @@ module.exports = {
   rules: {
     // ESLint
     'no-console': 'off',
+    'no-continue': 'off',
+    'consistent-return': 'off',
+    'prefer-destructuring': 'off',
 
     'no-restricted-syntax': [
       'error',

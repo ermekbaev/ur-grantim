@@ -2,6 +2,12 @@ import { createVar, style } from '@vanilla-extract/css';
 
 import { themeVars } from '~/styles/theme.css';
 
+export const FOCUSED_OR_ACTIVE_BUTTON_SELECTOR =
+  '&:is(:focus-visible, :active)';
+
+export const DISABLED_BUTTON_SELECTOR =
+  '&:is(:disabled, [aria-disabled="true"])';
+
 export const buttonStateLayerColorVar = createVar();
 export const buttonStateLayerOpacityVar = createVar();
 
@@ -32,15 +38,15 @@ export const baseButtonClass = style({
   selectors: {
     '&:hover': { vars: { [buttonStateLayerOpacityVar]: '0.08' } },
 
-    // [FOCUSED_OR_ACTIVE_BUTTON_SELECTOR]: {
-    //   vars: { [buttonStateLayerOpacityVar]: '0.12' },
-    //   outline: 'none',
-    // },
+    [FOCUSED_OR_ACTIVE_BUTTON_SELECTOR]: {
+      vars: { [buttonStateLayerOpacityVar]: '0.12' },
+      outline: 'none',
+    },
 
-    // [DISABLED_BUTTON_SELECTOR]: {
-    //   vars: { [buttonStateLayerOpacityVar]: '0' },
-    //   cursor: 'default',
-    // },
+    [DISABLED_BUTTON_SELECTOR]: {
+      vars: { [buttonStateLayerOpacityVar]: '0' },
+      cursor: 'default',
+    },
   },
 });
 

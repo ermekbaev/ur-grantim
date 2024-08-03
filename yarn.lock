@@ -1183,6 +1183,24 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@maskito/core@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "@maskito/core@npm:3.0.0"
+  checksum: 10/33bdf6e6ad38737cde9b905cf0176d42d99ae6c8bcafcc1be1f8ef27c436a1879d41fb51dc734b12c34da57c62147786d641d48468b32979f082ece565e1c38e
+  languageName: node
+  linkType: hard
+
+"@maskito/react@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "@maskito/react@npm:3.0.0"
+  peerDependencies:
+    "@maskito/core": ^3.0.0
+    react: ">=16.8"
+    react-dom: ">=16.8"
+  checksum: 10/cd3aad169cc776a2ecdc6e8d27536c5c2283b026ec82c605c0fcd19f8838c359e1a91eb73768b43f52e439b9ae6dd43adca4ffd8f65aaebe067f11a92f336a62
+  languageName: node
+  linkType: hard
+
 "@next/env@npm:15.0.0-rc.0":
   version: 15.0.0-rc.0
   resolution: "@next/env@npm:15.0.0-rc.0"
@@ -1832,6 +1850,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@vanilla-extract/recipes@npm:^0.5.3":
+  version: 0.5.3
+  resolution: "@vanilla-extract/recipes@npm:0.5.3"
+  peerDependencies:
+    "@vanilla-extract/css": ^1.0.0
+  checksum: 10/2ddf10ce3413ad892cec2cc03480af987c59d01bc23f4dfcefb5426cfafd3a4107277a560418332603f8f4c8e8a51032500e522db128d205821a488d05b71875
+  languageName: node
+  linkType: hard
+
 "@vanilla-extract/webpack-plugin@npm:^2.3.11":
   version: 2.3.11
   resolution: "@vanilla-extract/webpack-plugin@npm:2.3.11"
@@ -2074,6 +2101,8 @@ __metadata:
   resolution: "ashot@workspace:."
   dependencies:
     "@eslint-community/eslint-plugin-eslint-comments": "npm:^4.3.0"
+    "@maskito/core": "npm:^3.0.0"
+    "@maskito/react": "npm:^3.0.0"
     "@radix-ui/react-slot": "npm:^1.1.0"
     "@total-typescript/ts-reset": "npm:^0.5.1"
     "@types/eslint": "npm:^8.56.11"
@@ -2085,6 +2114,7 @@ __metadata:
     "@vanilla-extract/css": "npm:^1.15.3"
     "@vanilla-extract/css-utils": "npm:^0.1.4"
     "@vanilla-extract/next-plugin": "npm:^2.4.3"
+    "@vanilla-extract/recipes": "npm:^0.5.3"
     clsx: "npm:^2.1.1"
     concurrently: "npm:^8.2.2"
     css-blank-pseudo: "npm:^6.0.2"
@@ -2108,6 +2138,8 @@ __metadata:
     prettier: "npm:^3.3.3"
     react: "npm:19.0.0-rc-ab7c1663-20240730"
     react-dom: "npm:19.0.0-rc-ab7c1663-20240730"
+    react-hook-form: "npm:^7.52.1"
+    superstruct: "npm:^2.0.2"
     type-fest: "npm:^4.23.0"
     types-spring: "npm:^2.2.2"
     typescript: "npm:^5.5.4"
@@ -5691,6 +5723,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-hook-form@npm:^7.52.1":
+  version: 7.52.1
+  resolution: "react-hook-form@npm:7.52.1"
+  peerDependencies:
+    react: ^16.8.0 || ^17 || ^18 || ^19
+  checksum: 10/5d117cb767114749163f3c52cc09e6dbefca8b450c91abe9958884b4df505a44f0b088046d1c98504bfcd5d4104126cfeb8917c25cb25b0610d89f713b4b2080
+  languageName: node
+  linkType: hard
+
 "react-is@npm:^16.13.1":
   version: 16.13.1
   resolution: "react-is@npm:16.13.1"
@@ -6443,6 +6484,13 @@ __metadata:
     babel-plugin-macros:
       optional: true
   checksum: 10/3141b8cf07afd7da14cd12039137ea0c9736e04f58fb1d98e2fe0df550b116fb471fc77b010f7ffbef89635fec56f90d00a956e43c8a0e079b0269451ab8c92f
+  languageName: node
+  linkType: hard
+
+"superstruct@npm:^2.0.2":
+  version: 2.0.2
+  resolution: "superstruct@npm:2.0.2"
+  checksum: 10/10e1944a9da4baee187fbaa6c5d97d7af266b55786dfe50bce67f0f1e7d93f1a5a42dd51e245a2e16404f8336d07c21c67f1c1fbc4ad0a252d3d2601d6c926da
   languageName: node
   linkType: hard
 
