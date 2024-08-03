@@ -24,6 +24,7 @@ export const AboutSection: FC = () => (
 
     <Image
       alt=""
+      priority
       unoptimized
       src={img as StaticImageData}
       className={styles.aboutSectionImgClass}
