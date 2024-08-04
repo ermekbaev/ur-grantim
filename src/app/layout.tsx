@@ -11,10 +11,11 @@ import 'modern-normalize/modern-normalize.css';
 import './global.css';
 
 const title = 'Бухгалтерское обслуживание стартапов';
+const description = title;
 
 export const metadata: Metadata = {
   title,
-  other: { title },
+  description,
 
   formatDetection: {
     url: false,

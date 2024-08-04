@@ -1,0 +1,34 @@
+import * as styles from './styles.css';
+
+import type { FC } from 'react';
+
+export const ContactSection: FC = () => (
+  <section className={styles.contactSectionClass}>
+    <h2 className={styles.contactSectionHeadingClass}>Контакты</h2>
+
+    <address className={styles.contactSectionAddressClass}>
+      <p>ООО «УМНЫЕ РЕШЕНИЯ»</p>
+      <p>ИНН: 6320076916</p>
+      <p>Адрес: Самарская обл., г. Тольятти, Приморский б-р, влд. 31</p>
+
+      <p>
+        Телефон: <a href="tel:+78974324446">+7 (987) 43-24-446</a>
+      </p>
+
+      <p>
+        Эл. почта: <a href="mailto:light@sanosyan.com">light@sanosyan.com</a>
+      </p>
+    </address>
+
+    <div className={styles.contactSectionMapContainerClass}>
+      <iframe
+        src="https://yandex.ru/map-widget/v1/?um=constructor%3A30355eae3d57cac2e647943315146868fec3e9ff81e453b38bb9d52eca9bcaf8&amp;source=constructor"
+        width="735"
+        height="414"
+        loading="lazy"
+        title="Мы на карте"
+        className={styles.contactSectionMapClass}
+      />
+    </div>
+  </section>
+);
