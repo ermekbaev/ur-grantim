@@ -1,11 +1,13 @@
 import type { NextPage } from '~/types/components/next';
-import { AboutSection } from './sections/About';
-import { ContactSection } from './sections/Contact';
+import { AboutUsSection } from './sections/AboutUs';
+import { ContactsSection } from './sections/Contacts';
+// import { WorkStagesSection } from './sections/WorkStages';
 
 const IndexPage: NextPage = () => (
   <main>
-    <AboutSection />
-    <ContactSection />
+    <AboutUsSection />
+    {/* <WorkStagesSection /> */}
+    <ContactsSection />
   </main>
 );
 

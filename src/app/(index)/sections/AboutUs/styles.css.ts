@@ -7,7 +7,7 @@ import {
 } from '~/styles/text.css';
 import { themeVars } from '~/styles/theme.css';
 
-export const aboutSectionClass = style({
+const sectionClass = style({
   display: 'grid',
   gap: '2rem',
   paddingBlock: '2rem',
@@ -28,7 +28,7 @@ export const aboutSectionClass = style({
   },
 });
 
-export const aboutSectionContentClass = style({
+const contentClass = style({
   '@media': {
     [themeVars.media.minWidth.sm]: {
       display: 'flex',
@@ -42,7 +42,7 @@ export const aboutSectionContentClass = style({
   },
 });
 
-export const aboutSectionHeadingClass = style([
+const headingClass = style([
   headlineTextClassVariants.md,
   {
     fontWeight: 700,
@@ -54,7 +54,7 @@ export const aboutSectionHeadingClass = style([
   },
 ]);
 
-export const aboutSectionTextClass = style([
+const textClass = style([
   bodyTextClassVariants.lg,
   {
     marginBlock: '0.5rem 1rem',
@@ -65,9 +65,17 @@ export const aboutSectionTextClass = style([
   },
 ]);
 
-export const aboutSectionImgClass = style({
+const imgClass = style({
   width: '100%',
   height: 'auto',
 
   '@media': { [themeVars.media.minWidth.sm]: { maxWidth: '38rem' } },
 });
+
+export const aboutUsSectionStyles = {
+  sectionClass,
+  contentClass,
+  headingClass,
+  textClass,
+  imgClass,
+} as const;

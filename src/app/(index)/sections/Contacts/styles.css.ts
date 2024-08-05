@@ -7,7 +7,7 @@ import {
 } from '~/styles/text.css';
 import { themeVars } from '~/styles/theme.css';
 
-export const contactSectionClass = style({
+const sectionClass = style({
   display: 'grid',
   gap: '1.5rem',
 
@@ -26,7 +26,7 @@ export const contactSectionClass = style({
   },
 });
 
-export const contactSectionHeadingClass = style([
+const headingClass = style([
   headlineTextClassVariants.md,
   {
     marginBottom: '-0.75rem',
@@ -47,19 +47,15 @@ export const contactSectionHeadingClass = style([
   },
 ]);
 
-export const contactSectionAddressClass = style([
-  bodyTextClassVariants.lg,
-  { fontStyle: 'normal' },
-]);
+const addressClass = style([bodyTextClassVariants.lg, { fontStyle: 'normal' }]);
+globalStyle(`${addressClass} a`, { color: 'inherit' });
 
-globalStyle(`${contactSectionAddressClass} a`, { color: 'inherit' });
-
-export const contactSectionMapContainerClass = style({
+const mapContainerClass = style({
   position: 'relative',
   '::after': { content: '', display: 'block', paddingBottom: '50%' },
 });
 
-export const contactSectionMapClass = style({
+const mapClass = style({
   position: 'absolute',
   inset: 0,
 
@@ -68,3 +64,11 @@ export const contactSectionMapClass = style({
 
   border: `1px solid ${themeVars.colors.outlineVariant}`,
 });
+
+export const contactsSectionStyles = {
+  sectionClass,
+  headingClass,
+  addressClass,
+  mapContainerClass,
+  mapClass,
+} as const;

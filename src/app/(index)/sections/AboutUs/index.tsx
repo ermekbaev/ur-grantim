@@ -2,18 +2,18 @@ import Image, { type StaticImageData } from 'next/image';
 
 import { Button } from '~/components/buttons/Button';
 import img from './img.svg';
-import * as styles from './styles.css';
+import { aboutUsSectionStyles as styles } from './styles.css';
 
 import type { FC } from 'react';
 
-export const AboutSection: FC = () => (
-  <section className={styles.aboutSectionClass}>
-    <div className={styles.aboutSectionContentClass}>
-      <h1 className={styles.aboutSectionHeadingClass}>
+export const AboutUsSection: FC = () => (
+  <section className={styles.sectionClass}>
+    <div className={styles.contentClass}>
+      <h1 className={styles.headingClass}>
         Бухгалтерское обслуживание стартапов
       </h1>
 
-      <p className={styles.aboutSectionTextClass}>
+      <p className={styles.textClass}>
         Профессиональные бухгалтерские услуги для стартапов с грантами
         &#x00AB;Студенческий стартап&#x00BB; от Фонда содействия инновациям.
         Поможем бесплатно открыть ООО, первый месяц обслуживания - в подарок
@@ -27,7 +27,7 @@ export const AboutSection: FC = () => (
       priority
       unoptimized
       src={img as StaticImageData}
-      className={styles.aboutSectionImgClass}
+      className={styles.imgClass}
     />
   </section>
 );

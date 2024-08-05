@@ -1,12 +1,12 @@
-import * as styles from './styles.css';
+import { contactsSectionStyles as styles } from './styles.css';
 
 import type { FC } from 'react';
 
-export const ContactSection: FC = () => (
-  <section className={styles.contactSectionClass}>
-    <h2 className={styles.contactSectionHeadingClass}>Контакты</h2>
+export const ContactsSection: FC = () => (
+  <section className={styles.sectionClass}>
+    <h2 className={styles.headingClass}>Контакты</h2>
 
-    <address className={styles.contactSectionAddressClass}>
+    <address className={styles.addressClass}>
       <p>ООО «УМНЫЕ РЕШЕНИЯ»</p>
       <p>ИНН: 6320076916</p>
       <p>Адрес: Самарская обл., г. Тольятти, Приморский б-р, влд. 31</p>
@@ -20,14 +20,14 @@ export const ContactSection: FC = () => (
       </p>
     </address>
 
-    <div className={styles.contactSectionMapContainerClass}>
+    <div className={styles.mapContainerClass}>
       <iframe
         src="https://yandex.ru/map-widget/v1/?um=constructor%3A30355eae3d57cac2e647943315146868fec3e9ff81e453b38bb9d52eca9bcaf8&amp;source=constructor"
         width="735"
         height="414"
         loading="lazy"
         title="Мы на карте"
-        className={styles.contactSectionMapClass}
+        className={styles.mapClass}
       />
     </div>
   </section>
