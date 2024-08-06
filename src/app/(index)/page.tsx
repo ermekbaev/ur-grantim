@@ -1,12 +1,16 @@
 import type { NextPage } from '~/types/components/next';
 import { AboutUsSection } from './sections/AboutUs';
+// import { AdditionalServicesSection } from './sections/AdditionalServices';
 import { ContactsSection } from './sections/Contacts';
-// import { WorkStagesSection } from './sections/WorkStages';
+import { SimpleAndCheapSection } from './sections/SimpleAndCheap';
+import { WorkStagesSection } from './sections/WorkStages';
 
 const IndexPage: NextPage = () => (
   <main>
     <AboutUsSection />
-    {/* <WorkStagesSection /> */}
+    <SimpleAndCheapSection />
+    {/* <AdditionalServicesSection /> */}
+    <WorkStagesSection />
     <ContactsSection />
   </main>
 );

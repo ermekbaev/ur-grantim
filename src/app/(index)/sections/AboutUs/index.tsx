@@ -16,10 +16,21 @@ export const AboutUsSection: FC = () => (
       <p className={styles.textClass}>
         Профессиональные бухгалтерские услуги для стартапов с грантами
         &#x00AB;Студенческий стартап&#x00BB; от Фонда содействия инновациям.
-        Поможем бесплатно открыть ООО, первый месяц обслуживания - в подарок
       </p>
 
-      <Button variant="filled">Заказать консультацию</Button>
+      <ul className={styles.listClass}>
+        <li>
+          Поможем <strong>бесплатно</strong> открыть ООО
+        </li>
+
+        <li>
+          Первый месяц обслуживания - <strong>в подарок</strong>
+        </li>
+      </ul>
+
+      <Button variant="filled" className={styles.buttonClass}>
+        Заказать консультацию
+      </Button>
     </div>
 
     <Image

@@ -24,7 +24,7 @@ export interface IconProps
 export interface InitialIconProps
   extends ConditionalPick<IconProps, Primitive> {}
 
-function createIcon(
+export function createIcon(
   name: string,
   children: ReactNode,
   { className: initialClassName, ...initialProps }: InitialIconProps = {},

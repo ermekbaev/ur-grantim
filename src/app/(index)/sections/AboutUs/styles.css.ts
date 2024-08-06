@@ -28,42 +28,59 @@ const sectionClass = style({
   },
 });
 
-const contentClass = style({
-  '@media': {
-    [themeVars.media.minWidth.sm]: {
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
+const contentClass = style([
+  bodyTextClassVariants.lg,
+  {
+    '@media': {
+      [themeVars.media.minWidth.sm]: {
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
 
-      textAlign: 'center',
+        textAlign: 'center',
+      },
+
+      [themeVars.media.minWidth.lg]: {
+        alignItems: 'start',
+        textAlign: 'start',
+
+        fontSize: '1.125rem',
+      },
     },
-
-    [themeVars.media.minWidth.lg]: { alignItems: 'start', textAlign: 'start' },
   },
-});
+]);
 
 const headingClass = style([
-  headlineTextClassVariants.md,
+  headlineTextClassVariants.lg,
   {
     fontWeight: 700,
 
     '@media': {
-      [themeVars.media.minWidth.sm]: displayTextStyleVariants.sm,
-      [themeVars.media.minWidth.lg]: displayTextStyleVariants.md,
+      [themeVars.media.minWidth.sm]: displayTextStyleVariants.md,
+      [themeVars.media.minWidth.lg]: displayTextStyleVariants.lg,
     },
   },
 ]);
 
-const textClass = style([
-  bodyTextClassVariants.lg,
-  {
-    marginBlock: '0.5rem 1rem',
+const textClass = style({ marginBlock: '0.5rem 0' });
 
-    '@media': {
-      [themeVars.media.minWidth.lg]: { marginBlock: '0.75rem 1.5rem' },
+const listClass = style({
+  marginBlock: '0.5rem 1rem',
+  paddingInlineStart: '1.25rem',
+
+  listStyleType: 'armenian',
+
+  '@media': { [themeVars.media.minWidth.lg]: { paddingInlineStart: '1.5rem' } },
+});
+
+const buttonClass = style({
+  '@media': {
+    [themeVars.media.minWidth.lg]: {
+      vars: { [themeVars.lh]: '1.5rem' },
+      fontSize: '1rem',
     },
   },
-]);
+});
 
 const imgClass = style({
   width: '100%',
@@ -77,5 +94,7 @@ export const aboutUsSectionStyles = {
   contentClass,
   headingClass,
   textClass,
+  listClass,
+  buttonClass,
   imgClass,
 } as const;
