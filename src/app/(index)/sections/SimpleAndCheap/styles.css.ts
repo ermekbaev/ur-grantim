@@ -1,4 +1,4 @@
-import { style } from '@vanilla-extract/css';
+import { globalStyle, style } from '@vanilla-extract/css';
 import { calc } from '@vanilla-extract/css-utils';
 
 import { layoutPaddingInlineVar } from '~/app/global.css';
@@ -119,6 +119,37 @@ const listItemIconClass = style({
   },
 });
 
+const priceClass = style([
+  bodyTextClassVariants.lg,
+  {
+    marginBlockStart: '1.25rem',
+
+    '@media': {
+      [themeVars.media.minWidth.sm]: titleTextStyleVariants.lg,
+      [themeVars.media.minWidth.md]: { textAlign: 'center' },
+
+      [themeVars.media.minWidth.lg]: {
+        marginBlockStart: '2rem',
+        ...headlineTextStyleVariants.sm,
+      },
+    },
+  },
+]);
+
+globalStyle(`${priceClass} span`, { position: 'relative' });
+
+globalStyle(`${priceClass} span::after`, {
+  content: '',
+
+  position: 'absolute',
+  top: 'calc(50% - 1px)',
+  right: 0,
+  left: 0,
+
+  height: `${1 / 6}em`,
+  backgroundColor: 'currentColor',
+});
+
 export const simpleAndCheapSectionStyles = {
   sectionClass,
 
@@ -129,4 +160,6 @@ export const simpleAndCheapSectionStyles = {
   listClass,
   listItemClass,
   listItemIconClass,
+
+  priceClass,
 } as const;

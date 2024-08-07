@@ -1,49 +1,64 @@
+import type { Icon } from '~/icons';
+import {
+  AdsClick,
+  BusinessCenterIcon,
+  FinanceIcon,
+  WebIcon,
+} from '~/icons/material';
 import { additionalServicesSectionStyles as styles } from './styles.css';
 
 import type { FC } from 'react';
 
 interface Service {
+  Icon: Icon;
   name: string;
   price: number;
 }
 
-// Разделить бизнес-план и финансовую модель на две отдельные услуги
-
 const services: Service[] = [
+  { Icon: WebIcon, price: 20_000, name: 'Создание сайта проекта' },
+
   {
+    Icon: AdsClick,
     price: 10_000,
-    name: 'Организация воинского учета организации',
+    name: 'Проведение маркетинговых исследований по профилю',
   },
 
-  { price: 20_000, name: 'Создание сайта проекта' },
-  { price: 10_000, name: 'Проведение маркетинговых исследований по профилю' },
-
   {
+    Icon: BusinessCenterIcon,
     price: 20_000,
-    name: 'Создание Бизнес-плана проекта (если нет своей финансовой модели)',
+    name: 'Создание бизнес-плана проекта',
   },
 
   {
-    price: 15_000,
-    name: 'Создание Бизнес-плана проекта (при наличии финансовой модели)',
+    Icon: FinanceIcon,
+    price: 5000,
+    name: 'Разработка финансовой модели проекта',
   },
-
-  { price: 5000, name: 'Помощь в сдаче отчетностей по проекту' },
 ];
 
 const priceFormatter = new Intl.NumberFormat('ru-RU', {
   style: 'currency',
   currency: 'RUB',
+  minimumFractionDigits: 0,
 });
 
 export const AdditionalServicesSection: FC = () => (
   <section className={styles.sectionClass}>
     <h2 className={styles.headingClass}>Дополнительные услуги</h2>
 
-    <ul style={{ marginTop: '2rem' }}>
-      {services.map(({ name, price }) => (
-        <li key={name}>
-          {name}: {priceFormatter.format(price)}
+    <ul className={styles.listClass}>
+      {services.map(({ Icon, name, price }) => (
+        <li key={name} className={styles.listItemClass}>
+          <Icon aria-hidden className={styles.listItemIconClass} />
+
+          <div>
+            <p className={styles.listItemPriceClass}>
+              {priceFormatter.format(price)}
+            </p>
+
+            <p className={styles.listItemNameClass}>{name}</p>
+          </div>
         </li>
       ))}
     </ul>

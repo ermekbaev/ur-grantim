@@ -66,5 +66,13 @@ export const SimpleAndCheapSection: FC = () => (
         </li>
       ))}
     </ul>
+
+    <p className={styles.priceClass}>
+      Цена:{' '}
+      <strong>
+        всего <span>24000</span> 12000 рублей
+      </strong>{' '}
+      в месяц при заключении договора до 30 сентября 2024
+    </p>
   </section>
 );
