@@ -11,6 +11,11 @@ const nextConfig = {
     contentDispositionType: 'attachment',
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
   },
+
+  webpack: (config) => ({
+    ...config,
+    externals: [...config.externals, { sharp: 'commonjs sharp' }],
+  }),
 };
 
 const withVanillaExtract = createVanillaExtractPlugin();

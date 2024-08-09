@@ -72,7 +72,6 @@
     "eslint-plugin-unicorn": "^55.0.0",
     "postcss-preset-env": "^10.0.0",
     "prettier": "^3.3.3",
-    "sharp": "0.30.4",
     "types-spring": "^2.2.2",
     "typescript": "^5.5.4"
   },
