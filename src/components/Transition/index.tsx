@@ -52,8 +52,6 @@ export const Transition: FC<TransitionProps> = ({ nodeRef, ...props }) => {
   };
 
   return (
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-expect-error
     <CSSTransition
       nodeRef={nodeRef}
       addEndListener={defaultAddEndListener}
