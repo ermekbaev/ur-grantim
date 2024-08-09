@@ -40,7 +40,6 @@ export const BenefitsSection: FC<{ id: string }> = ({ id }) => (
       alt=""
       src={img}
       quality={80}
-      placeholder="blur"
       sizes={[
         `${themeVars.media.maxWidth.sm} 100vw`,
         `${themeVars.media.maxWidth.md} 38rem`,
