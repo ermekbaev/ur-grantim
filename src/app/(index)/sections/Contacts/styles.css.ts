@@ -1,57 +1,36 @@
-import { globalStyle, style } from '@vanilla-extract/css';
+import { style } from '@vanilla-extract/css';
 
-import {
-  bodyTextClassVariants,
-  displayTextStyleVariants,
-  headlineTextClassVariants,
-} from '~/styles/text.css';
+import { bodyTextClassVariants } from '~/styles/text.css';
 import { themeVars } from '~/styles/theme.css';
 
 const sectionClass = style({
-  display: 'grid',
-  gap: '1.5rem',
-
-  paddingBlock: '2rem',
-
   '@media': {
-    [themeVars.media.minWidth.sm]: { paddingBlock: '3rem' },
-    [themeVars.media.minWidth.md]: { gridTemplateColumns: 'repeat(2, 1fr)' },
+    [themeVars.media.minWidth.md]: {
+      display: 'grid',
+      gridTemplateColumns: '1fr 1fr',
 
-    [themeVars.media.minWidth.lg]: {
-      rowGap: '2rem',
-      columnGap: '4rem',
-
-      paddingBlock: '4rem',
+      rowGap: '1rem',
+      columnGap: '2rem',
     },
+
+    [themeVars.media.minWidth.lg]: { rowGap: '2rem', columnGap: '4rem' },
   },
 });
 
-const headingClass = style([
-  headlineTextClassVariants.md,
+const addressClass = style([
+  bodyTextClassVariants.lg,
   {
-    marginBottom: '-0.75rem',
-    fontWeight: 700,
+    marginBlock: '0.25rem 1rem',
 
-    '@media': {
-      [themeVars.media.minWidth.sm]: displayTextStyleVariants.sm,
+    fontStyle: 'normal',
 
-      [themeVars.media.minWidth.md]: {
-        gridColumn: '1 / -1',
-        marginBottom: 0,
-
-        textAlign: 'center',
-      },
-
-      [themeVars.media.minWidth.lg]: displayTextStyleVariants.md,
-    },
+    '@media': { [themeVars.media.minWidth.md]: { marginBlock: 0 } },
   },
 ]);
 
-const addressClass = style([bodyTextClassVariants.lg, { fontStyle: 'normal' }]);
-globalStyle(`${addressClass} a`, { color: 'inherit' });
-
 const mapContainerClass = style({
   position: 'relative',
+
   '::after': { content: '', display: 'block', paddingBottom: '50%' },
 });
 
@@ -67,7 +46,6 @@ const mapClass = style({
 
 export const contactsSectionStyles = {
   sectionClass,
-  headingClass,
   addressClass,
   mapContainerClass,
   mapClass,

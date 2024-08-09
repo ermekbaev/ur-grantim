@@ -53,4 +53,5 @@ globalStyle('main', {
   paddingInline: layoutPaddingInlineVar,
 });
 
+globalStyle('a', { color: 'inherit' });
 globalStyle('sub, sup', { vars: { [themeVars.lh]: '0' } });

@@ -16,8 +16,9 @@ type IconStylingProps = {
 
 export interface IconProps
   extends IconStylingProps,
-    Except<SVGProps, 'children' | keyof IconStylingProps> {
+    Except<SVGProps, 'children' | 'aria-hidden' | keyof IconStylingProps> {
   ref?: Ref<SVGSVGElement>;
+  'aria-visible'?: SVGProps['aria-hidden'];
   size?: IconStylingProps['width'] & IconStylingProps['height'];
 }
 
@@ -30,11 +31,16 @@ export function createIcon(
   { className: initialClassName, ...initialProps }: InitialIconProps = {},
 ) {
   const Icon: FC<IconProps> = ({ className, ...props }) => {
-    const { size, ...mergedProps } = { ...initialProps, ...props };
+    const {
+      size,
+      'aria-visible': ariaVisible,
+      ...mergedProps
+    } = { ...initialProps, ...props };
 
     return (
       <svg
         xmlns="http://www.w3.org/2000/svg"
+        aria-hidden={ariaVisible === 'false' ? true : !ariaVisible}
         display="block"
         width={size}
         height={size}
@@ -42,8 +48,8 @@ export function createIcon(
         fill="currentColor"
         stroke="currentColor"
         strokeWidth={0}
-        {...mergedProps}
         className={clsx(styles.iconClass, initialClassName, className)}
+        {...mergedProps}
       >
         {children}
       </svg>

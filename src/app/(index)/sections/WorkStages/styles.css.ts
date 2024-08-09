@@ -6,7 +6,6 @@ import { iconSizeVar } from '~/icons/styles.css';
 import {
   bodyTextClassVariants,
   bodyTextStyleVariants,
-  displayTextStyleVariants,
   headlineTextClassVariants,
   titleTextClassVariants,
   titleTextStyleVariants,
@@ -15,27 +14,8 @@ import { themeVars } from '~/styles/theme.css';
 
 const sectionClass = style({
   marginInline: calc.negate(layoutPaddingInlineVar),
-  paddingBlock: '2rem',
   paddingInline: layoutPaddingInlineVar,
-
-  '@media': {
-    [themeVars.media.minWidth.sm]: { paddingBlock: '3rem' },
-    [themeVars.media.minWidth.lg]: { paddingBlock: '4rem' },
-  },
 });
-
-const headingClass = style([
-  headlineTextClassVariants.md,
-  {
-    fontWeight: 700,
-
-    '@media': {
-      [themeVars.media.minWidth.sm]: displayTextStyleVariants.sm,
-      [themeVars.media.minWidth.md]: { textAlign: 'center' },
-      [themeVars.media.minWidth.lg]: displayTextStyleVariants.md,
-    },
-  },
-]);
 
 //* ================================ Accordion =================================
 
@@ -110,7 +90,6 @@ const accordionContentClass = style([
     selectors: {
       '&[data-state="open"]': {
         display: 'flex',
-        alignItems: 'center',
 
         animation: `${openingKeyframes} 250ms`,
       },
@@ -126,7 +105,7 @@ const accordionContentIconClass = style({
   width: '2.5rem',
   height: '2.5rem',
 
-  marginRight: '1rem',
+  marginRight: '0.75rem',
 
   color: themeVars.colors.onSurfaceVariant,
 });
@@ -263,7 +242,7 @@ const schemeListItemTitleClass = style([
 
     '@media': {
       [themeVars.media.minWidth.xl]: {
-        ...titleTextStyleVariants.lg,
+        ...titleTextStyleVariants.xl,
         fontWeight: 500,
       },
     },
@@ -291,7 +270,6 @@ const schemeListItemTextClass = style([
 
 export const workStagesSectionStyles = {
   sectionClass,
-  headingClass,
 
   accordionClass,
   accordionItemClass,

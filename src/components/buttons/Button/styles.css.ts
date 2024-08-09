@@ -50,6 +50,19 @@ export const buttonRecipe = recipe({
           },
         },
       },
+
+      text: {
+        vars: { [buttonPaddingInlineVar]: '1rem' },
+
+        backgroundColor: 'transparent',
+        color: themeVars.colors.primary,
+
+        selectors: {
+          [DISABLED_BUTTON_SELECTOR]: {
+            color: themeVars.colors['onSurface-0.38'],
+          },
+        },
+      },
     },
   },
 });

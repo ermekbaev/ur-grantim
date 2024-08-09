@@ -8,14 +8,15 @@ import {
 
 import type { Icon } from '~/icons';
 import {
-  ArrowDropDownIcon,
-  CheckCircleIcon,
-  ContractIcon,
-  HandshakeIcon,
-  ManageSearchIcon,
-  SmsIcon,
-  SupportIcon,
+  ArrowDropDown,
+  CheckCircle,
+  Contract,
+  Handshake,
+  ManageSearch,
+  Sms,
+  Support,
 } from '~/icons/material';
+import { Section } from '../Section';
 import { workStagesSectionStyles as styles } from './styles.css';
 
 import type { FC } from 'react';
@@ -28,45 +29,45 @@ interface Stage {
 
 const stages = [
   {
-    Icon: SmsIcon,
+    Icon: Sms,
     title: 'Бесплатная консультация',
     text: 'Проконсультируем от постановки на налоговый и воинский учет организации до сдачи отчетов',
   },
 
   {
-    Icon: ManageSearchIcon,
+    Icon: ManageSearch,
     title: 'Выбор формата работы',
     text: 'Подбор системы налогообложения, банка для открытия р/c под ваш вид деятельности',
   },
 
   {
-    Icon: HandshakeIcon,
+    Icon: Handshake,
     title: 'Предложение',
     text: 'Подготовка и согласование коммерческого предложения',
   },
 
   {
-    Icon: CheckCircleIcon,
+    Icon: CheckCircle,
     title: 'Утверждение',
     text: 'Закрепляем выбранные условия (так как количество мест с текущими условиями ограничено)',
   },
 
   {
-    Icon: ContractIcon,
+    Icon: Contract,
     title: 'Заключение договора',
     text: 'Заключаем договор на выбранный срок с бесплатным месяцем обслуживания',
   },
 
   {
-    Icon: SupportIcon,
+    Icon: Support,
     title: 'Обслуживание и поддержка',
-    text: 'Полностью берём на себя под ключ бухгалтерский и кадровый учёт',
+    text: 'Полностью берём на себя &laquo;под ключ&raquo; бухгалтерский и кадровый учёт',
   },
 ] as const satisfies Stage[];
 
-export const WorkStagesSection: FC = () => (
-  <section className={styles.sectionClass}>
-    <h2 className={styles.headingClass}>Этапы работы</h2>
+export const WorkStagesSection: FC<{ id: string }> = ({ id }) => (
+  <Section.Root id={id} className={styles.sectionClass}>
+    <Section.Heading>Этапы работы</Section.Heading>
 
     <AccordionRoot
       asChild
@@ -91,7 +92,7 @@ export const WorkStagesSection: FC = () => (
                       {title}
                     </span>
 
-                    <ArrowDropDownIcon
+                    <ArrowDropDown
                       aria-hidden
                       className={styles.accordionTriggerArrowClass}
                     />
@@ -104,7 +105,9 @@ export const WorkStagesSection: FC = () => (
                   aria-hidden
                   className={styles.accordionContentIconClass}
                 />
-                {text}
+
+                {/* eslint-disable-next-line react/no-danger */}
+                <span dangerouslySetInnerHTML={{ __html: text }} />
               </AccordionContent>
             </li>
           </AccordionItem>
@@ -124,9 +127,13 @@ export const WorkStagesSection: FC = () => (
           <p className={styles.schemeListItemTitleClass}>{title}</p>
           <Icon aria-hidden className={styles.schemeListItemIconClass} />
 
-          <p className={styles.schemeListItemTextClass}>{text}</p>
+          <p
+            // eslint-disable-next-line react/no-danger
+            dangerouslySetInnerHTML={{ __html: text }}
+            className={styles.schemeListItemTextClass}
+          />
         </li>
       ))}
     </ol>
-  </section>
+  </Section.Root>
 );

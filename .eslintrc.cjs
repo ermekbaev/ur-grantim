@@ -64,11 +64,17 @@ module.exports = {
     ],
 
     // Typescript
+    '@typescript-eslint/unbound-method': 'off',
     '@typescript-eslint/prefer-nullish-coalescing': 'off',
 
     '@typescript-eslint/no-unused-vars': [
       'warn',
       { ignoreRestSiblings: false },
+    ],
+
+    '@typescript-eslint/no-misused-promises': [
+      'warn',
+      { checksVoidReturn: false },
     ],
 
     '@typescript-eslint/no-empty-interface': [

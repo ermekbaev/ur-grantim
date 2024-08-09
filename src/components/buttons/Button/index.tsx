@@ -2,6 +2,7 @@ import { Slottable } from '@radix-ui/react-slot';
 import { clsx } from 'clsx/lite';
 
 import type { Icon } from '~/icons';
+import { Spinner } from '~/icons/others';
 import type { PropsWithAsChild } from '~/types/components';
 import { BaseButton, type BaseButtonProps } from '../BaseButton';
 import * as styles from './styles.css';
@@ -18,29 +19,37 @@ type IconPosition = NonNullable<
 >['position'];
 
 export interface ButtonProps extends Variants, BaseButtonProps {
+  loading?: boolean;
+
   icon?: Icon;
   iconPosition?: IconPosition;
 }
 
 export const Button: FC<PropsWithAsChild<ButtonProps>> = ({
+  loading,
   children,
   variant,
   className,
-  icon: Icon,
+  icon,
   iconPosition,
   ...props
-}) => (
-  <BaseButton
-    className={clsx(styles.buttonRecipe({ variant }), className)}
-    {...props}
-  >
-    <Slottable>{children}</Slottable>
+}) => {
+  const Icon = loading ? Spinner : icon;
 
-    {Icon && (
-      <Icon
-        aria-hidden
-        className={styles.buttonIconRecipe({ position: iconPosition })}
-      />
-    )}
-  </BaseButton>
-);
+  return (
+    <BaseButton
+      softDisabled={loading}
+      className={clsx(styles.buttonRecipe({ variant }), className)}
+      {...props}
+    >
+      <Slottable>{children}</Slottable>
+
+      {Icon && (
+        <Icon
+          aria-hidden
+          className={styles.buttonIconRecipe({ position: iconPosition })}
+        />
+      )}
+    </BaseButton>
+  );
+};

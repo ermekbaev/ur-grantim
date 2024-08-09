@@ -1,10 +1,6 @@
 import type { Icon } from '~/icons';
-import {
-  AdsClick,
-  BusinessCenterIcon,
-  FinanceIcon,
-  WebIcon,
-} from '~/icons/material';
+import { BusinessCenter, Finance, QueryStats, Web } from '~/icons/material';
+import { Section } from '../Section';
 import { additionalServicesSectionStyles as styles } from './styles.css';
 
 import type { FC } from 'react';
@@ -16,24 +12,24 @@ interface Service {
 }
 
 const services: Service[] = [
-  { Icon: WebIcon, price: 20_000, name: 'Создание сайта проекта' },
-
   {
-    Icon: AdsClick,
-    price: 10_000,
-    name: 'Проведение маркетинговых исследований по профилю',
-  },
-
-  {
-    Icon: BusinessCenterIcon,
-    price: 20_000,
-    name: 'Создание бизнес-плана проекта',
-  },
-
-  {
-    Icon: FinanceIcon,
+    Icon: Finance,
+    name: 'Построение финансовой модели организации',
     price: 5000,
-    name: 'Разработка финансовой модели проекта',
+  },
+
+  {
+    Icon: BusinessCenter,
+    name: 'Составление бизнес-плана проекта',
+    price: 15_000,
+  },
+
+  { Icon: Web, name: 'Разработка веб-сайта организации', price: 15_000 },
+
+  {
+    Icon: QueryStats,
+    name: 'Проведение маркетинговых исследований по профилю',
+    price: 10_000,
   },
 ];
 
@@ -44,23 +40,24 @@ const priceFormatter = new Intl.NumberFormat('ru-RU', {
 });
 
 export const AdditionalServicesSection: FC = () => (
-  <section className={styles.sectionClass}>
-    <h2 className={styles.headingClass}>Дополнительные услуги</h2>
+  <Section.Root>
+    <Section.Heading>Дополнительные услуги</Section.Heading>
 
-    <ul className={styles.listClass}>
-      {services.map(({ Icon, name, price }) => (
+    {/* eslint-disable-next-line jsx-a11y/no-redundant-roles */}
+    <ul role="list" className={styles.listClass}>
+      {services.map(({ Icon, price, name }) => (
         <li key={name} className={styles.listItemClass}>
-          <Icon aria-hidden className={styles.listItemIconClass} />
+          <Icon className={styles.listItemIconClass} />
 
           <div>
-            <p className={styles.listItemPriceClass}>
+            <h6 className={styles.listItemPriceClass}>
               {priceFormatter.format(price)}
-            </p>
+            </h6>
 
             <p className={styles.listItemNameClass}>{name}</p>
           </div>
         </li>
       ))}
     </ul>
-  </section>
+  </Section.Root>
 );

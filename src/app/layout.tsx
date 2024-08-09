@@ -1,7 +1,5 @@
-import { clsx } from 'clsx/lite';
-import { Manrope } from 'next/font/google';
-
-import { lightThemeClass } from '~/styles/theme.css';
+import { labGrotesqueFont } from '~/fonts';
+import { darkThemeClass, lightThemeClass } from '~/styles/theme.css';
 import type { NextLayout } from '~/types/components/next';
 import { CssController } from './CssController';
 
@@ -26,35 +24,10 @@ export const metadata: Metadata = {
   },
 };
 
-const font = Manrope({
-  display: 'swap',
-  subsets: ['cyrillic'],
-  weight: ['400', '500', '600', '700'],
-
-  fallback: [
-    '-apple-system',
-    'BlinkMacSystemFont',
-    "'Segoe UI'",
-    "'Oxygen'",
-    "'Ubuntu'",
-    "'Cantarell'",
-    "'Fira Sans'",
-    "'Droid Sans'",
-    "'Helvetica Neue'",
-    'sans-serif',
-
-    "'Apple Color Emoji'",
-    "'Segoe UI Emoji'",
-    "'Segoe UI Symbol'",
-    "'Noto Color Emoji'",
-    'emoji',
-  ],
-});
-
 const RootLayout: NextLayout = ({ children }) => (
-  <html lang="ru-RU" className={clsx(font.className, lightThemeClass)}>
+  <html lang="ru-RU" className={lightThemeClass}>
     <CssController />
-    <body>{children}</body>
+    <body className={labGrotesqueFont.className}>{children}</body>
   </html>
 );
 
