@@ -1,6 +1,7 @@
 import { style } from '@vanilla-extract/css';
 
 import { layoutPaddingInlineVar } from '~/app/global.css';
+import { iconWidthVar } from '~/icons/styles.css';
 import {
   bodyTextClassVariants,
   bodyTextStyleVariants,
@@ -24,13 +25,13 @@ const footerClass = style([
 ]);
 
 const logoClass = style({
-  width: '8rem',
+  vars: { [iconWidthVar]: '8rem' },
   marginBlockEnd: '0.75rem',
   color: themeVars.colors.primary,
 
   '@media': {
-    [themeVars.media.minWidth.sm]: { width: '9rem' },
-    [themeVars.media.minWidth.lg]: { width: '10rem' },
+    [themeVars.media.minWidth.sm]: { vars: { [iconWidthVar]: '9rem' } },
+    [themeVars.media.minWidth.lg]: { vars: { [iconWidthVar]: '10rem' } },
   },
 });
 

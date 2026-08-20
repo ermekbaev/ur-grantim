@@ -2,7 +2,7 @@ import { createVar, style } from '@vanilla-extract/css';
 import { calc } from '@vanilla-extract/css-utils';
 import { recipe } from '@vanilla-extract/recipes';
 
-import { iconSizeVar } from '~/icons/styles.css';
+import { iconHeightVar, iconSizeVar } from '~/icons/styles.css';
 import { bodyTextClassVariants } from '~/styles/text.css';
 import { themeVars } from '~/styles/theme.css';
 
@@ -57,11 +57,13 @@ export const headerContentClass = style({
 });
 
 export const headerLogoClass = style({
-  height: '2.25rem',
+  vars: { [iconHeightVar]: '2.25rem' },
 
   color: themeVars.colors.primary,
 
-  '@media': { [themeVars.media.minWidth.md]: { height: '2.5rem' } },
+  '@media': {
+    [themeVars.media.minWidth.md]: { vars: { [iconHeightVar]: '2.5rem' } },
+  },
 });
 
 export const headerMenuBtnClass = style({
