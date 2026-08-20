@@ -4,7 +4,7 @@ import { createVanillaExtractPlugin } from '@vanilla-extract/next-plugin';
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  experimental: { cssChunking: 'strict' },
+  experimental: { cssChunking: 'loose' },
   compiler: { removeConsole: process.env.NODE_ENV === 'production' },
 
   images: {

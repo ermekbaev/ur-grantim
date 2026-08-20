@@ -10,7 +10,6 @@ export const smartSolutionsLogoClass = style({
   fontSize: 1598.24,
   fontWeight: 500,
   textTransform: 'uppercase',
-  whiteSpace: 'pre-line',
 });
 
 const rotateKeyframes = keyframes({
